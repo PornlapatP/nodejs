@@ -1,0 +1,9 @@
+<div id="outlet"></div>
+<script>
+    fetch('http://127.0.0.1:3001/users').then((r)=>{ return r.json();})
+    .then((r)=>{
+        console.log(r)
+        document.getElementById('outlet').innerHTML = `${r[2].id} : ${r[2].name} : ${r[2].age}`;
+    });
+
+</script>

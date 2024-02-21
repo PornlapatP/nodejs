@@ -1,0 +1,21 @@
+services:
+  nodejs:
+    build: .
+    ports:
+      - "3001:3001"
+  postgres:
+    image: "postgres:16.1"
+    ports:
+      - 4321:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=1234567
+      - POSTGRES_USER = postgres
+      - POSTGRES_DB = postgres
+      - POSTGRES_HOST_AUTH_METHOD=trust
+volumes:
+ pgdata:
+    
+
+
